@@ -13,7 +13,7 @@ docker run \
   -e EXTERNALIP=22.22.22.22 \
   --restart=always \
   --name coturn \
-  boldt/coturn
+  holdlg/coturn
 ```
 
 ## Environment variables
@@ -46,7 +46,7 @@ docker run \
   -e MAX_PORT=${MAX_PORT} \
   --restart=always \
   --name coturn \
-  boldt/coturn
+  holdlg/coturn
 ```
 
 ## Certificates
@@ -63,7 +63,7 @@ docker run \
   --volume /opt/pkey.pem:/etc/ssl/turn_server_pkey.pem \
   --restart=always \
   --name coturn \
-  boldt/coturn
+  holdlg/coturn
 ```
 
 ## Debugging

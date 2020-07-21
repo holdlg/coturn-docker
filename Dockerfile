@@ -16,7 +16,8 @@ ENV EXTERNALIP=11.11.11.11
 ENV MIN_PORT=65435
 ENV MAX_PORT=65535
 
-RUN apt-get update && apt-get install -y coturn && rm -rf /var/lib/apt/lists/*
+RUN mkdir /var/lib/turn
+RUN apt-get update && apt-get install -y coturn iproute2 && rm -rf /var/lib/apt/lists/*
   
 
 ENTRYPOINT ["bash", "deploy-turnserver.sh"]    

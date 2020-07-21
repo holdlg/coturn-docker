@@ -23,13 +23,13 @@ userdb=/var/lib/turn/turndb
 # use real-valid certificate/privatekey files
 cert=/etc/ssl/turn_server_cert.pem
 pkey=/etc/ssl/turn_server_pkey.pem
+user=$USERNAME:$PASSWORD
  
 no-stdout-log"  | tee /etc/turnserver.conf
 
-turnadmin -a -u $USERNAME -p $PASSWORD -r $REALM
-
-echo "Start TURN server..."
-
-turnserver
+# add user coturn 4.5.x unavailable
+# turnadmin -a -u $USERNAME -p $PASSWORD -r $REALM
 
 echo "TURN server running. IP: "$EXTERNALIP" Username: $USERNAME, password: $PASSWORD"
+turnserver
+
